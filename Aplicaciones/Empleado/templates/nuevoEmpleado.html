@@ -5,16 +5,16 @@
     <div class="col-md-3"></div>
     <div class="col-md-6 bg-light">
         <h1>Nuevo Empleado</h1>
-        <form action="guardaEmpleado" method="post">
+        <form action="guardarEmpleado" method="post">
             {% csrf_token %}
             
             <label for="nombre">Nombre</label><br>
             <input class="form-control" type="text" name="nombre" id="nombre" required><br>
 
-            <label for="ubicacion">Ubicacion</label><br>
-            <input class="form-control" type="text" name="ubicacion" id="ubicacion" required><br>
+            <label for="ubicacion" style="font-family: Arial, Helvetica, sans-serif;color: black;">Ubicacion</label><br>
+            <input class="form-control " type="text" name="ubicacion" id="ubicacion" required><br>
 
-            <label for="telefono">Telefono</label><br>
+            <label for="telefono"  style="font-family: Arial, Helvetica, sans-serif;color: black;">Telefono</label><br>
             <input class="form-control" type="text" name="telefono" id="telefono" required><br>
 
             <button class="btn btn-success" type="submit">Guardar</button>

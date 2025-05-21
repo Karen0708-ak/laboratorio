@@ -28,7 +28,7 @@ def eliminarEmpleado(request,id):
     return redirect('inicioem')
 
 #editar
-def editarEmpleado(request,id_autor):
+def editarEmpleado(request,id):
     empleadoEditar=Empleado.objects.get(id=id)
     return render(request,"editarEmpleado.html",{'empleadoEditar':empleadoEditar})
 
