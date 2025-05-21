@@ -1,0 +1,32 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+{% block body %}
+<h1>hola</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>UBICACION</th>
+            <th>PROPIETARIO</th>
+            <th>TELEFONO</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for empleadoTemporal in empleado %}
+            <tr>
+            <td>{{empleadoTemporal.id}}</td>
+            <td>{{empleadoTemporal.nombre}}</td>
+            <td>{{empleadoTemporal.ubicacion}}</td>
+            <td>{{empleadoTemporal.propietario}}</td>
+            <td>{{empleadoTemporal.telefono}}</td>
+            <td>
+                <a href="">Editar</a>
+                <a href="">Eliminar</a> 
+            </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
