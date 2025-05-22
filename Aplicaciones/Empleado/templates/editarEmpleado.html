@@ -3,13 +3,13 @@
 {% block body %}
 <div class="row">
     <div class="col-md-3"></div>
-    <div class="col-md-6 bg-light">
+    <div class="col-md-6 bg-black">
         <h1>Nuevo Empleado</h1>
         <form action="/procesarEdicionEmpleado" method="post">
             {% csrf_token %}
             <input type="hidden" name="id" value="{{empleadoEditar.id}}">
             <label for="nombre">Nombre</label><br>
-            <input class="form-control" type="text" name="nombre" id="nombre" value="{{empleadoEditar.id}}"><br>
+            <input class="form-control" type="text" name="nombre" id="nombre" value="{{empleadoEditar.nombre}}"><br>
 
             <label for="ubicacion">Ubicacion</label><br>
             <input class="form-control" type="text" name="ubicacion" id="ubicacion" value="{{empleadoEditar.ubicacion}}"><br>

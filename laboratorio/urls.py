@@ -21,6 +21,7 @@ from django.views.generic import RedirectView
 from django.urls import reverse_lazy
 
 urlpatterns = [
+    path('', RedirectView.as_view(url=reverse_lazy('inicioem'), permanent=False)), 
     path('admin/', admin.site.urls),
     path('',include('Aplicaciones.Empleado.urls')),
     path('',include('Aplicaciones.Vinedo.urls')),
