@@ -13,7 +13,7 @@ def nuevoMuestreo(request):
     lvinedos=Vinedo.objects.all()
     return render(request,"nuevoMuestreo.html",{'empleados':rempleados,'vinedos':lvinedos})
 #Almacenando los datos de cargo en la Bdd
-def guardarVinedo(request):
+def guardarMuestreo(request):
     fecha = request.POST["fecha"]
     resulados = request.POST["resulados"]
     analistaid = request.POST["analista"]
@@ -27,7 +27,7 @@ def guardarVinedo(request):
             vinedo=vinedo,
         )
     #mensaje de confirmacion
-    messages.success(request,"Viñedo guardado exitosamente")
+    messages.success(request,"Muestreo guardado exitosamente")
     return redirect('iniciovi')
 def eliminarVinedo(request,id):
     vinedoEliminar = Vinedo.objects.get(id=id)
