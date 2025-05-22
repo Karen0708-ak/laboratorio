@@ -22,5 +22,6 @@ from django.urls import reverse_lazy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('Aplicaciones.Empleado.urls'))
+    path('',include('Aplicaciones.Empleado.urls')),
+    path('',include('Aplicaciones.Vinedo.urls')),
 ]

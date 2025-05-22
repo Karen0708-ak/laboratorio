@@ -20,10 +20,10 @@
         {% for vinedoTemporal in vinedo %}
             <tr>
                 <td>{{vinedoTemporal.id}}</td>
-                <td>{{vinedoTemporal.nombre}}</td>
                 <td>{{vinedoTemporal.ubicacion}}</td>
-                <td>{{vinedoTemporal.telefono}}</td>
-                <td>{{vinedoTemporal.telefonvinedo
+                <td>{{vinedoTemporal.hectareas}}</td>
+                <td>{{vinedoTemporal.variedad_uva}}</td>
+                <td>{{vinedoTemporal.anio_plantacion}}</td>
                 <td>
                     <a href="editarVinedo/{{vinedoTemporal.id}}" class="btn btn-outline-warning">
                         <i class="fa fa-pen"></i>
@@ -56,7 +56,7 @@
 </table>
 <div class="text-center ">
     <a href="nuevoVinedo" class="btn btn-primary " >
-        Agregar Autor
+        Agregar Viñedo
     </a>
 </div>
 <br>

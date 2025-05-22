@@ -14,19 +14,19 @@ def guardarVinedo(request):
     hectareas = request.POST["hectareas"]
     variedad_uva = request.POST["variedad_uva"]
     anio_plantacion = request.POST["anio_plantacion"]
-    nuevoEmpleado=Vinedo.objects.create(
+    nuevoVinedo=Vinedo.objects.create(
             ubicacion=ubicacion,
             hectareas=hectareas,
             variedad_uva=variedad_uva,
-            anio_plantacion=anio_plantacion,
+            anio_plantacion = anio_plantacion,
         )
     #mensaje de confirmacion
-    messages.success(request,"Vinedo guardado exitosamente")
+    messages.success(request,"Viñedo guardado exitosamente")
     return redirect('iniciovi')
 def eliminarVinedo(request,id):
     vinedoEliminar = Vinedo.objects.get(id=id)
     vinedoEliminar.delete()
-    messages.success(request,"Vinedo ELIMINADO exitosamente")
+    messages.success(request,"Viñedo ELIMINADO exitosamente")
     return redirect('iniciovi')
 
 #editar
@@ -37,7 +37,7 @@ def editarVinedo(request,id):
 def procesarEdicionVinedo(request):
     id=request.POST["id"]
     ubicacion = request.POST["ubicacion"]
-    hectareas = request.POST["hectareas"]
+    hectareas = request.POST["hectareas"].replace(',','.')
     variedad_uva = request.POST["variedad_uva"]
     anio_plantacion = request.POST["anio_plantacion"]
     vinedo=Vinedo.objects.get(id=id)
@@ -47,5 +47,5 @@ def procesarEdicionVinedo(request):
     vinedo.anio_plantacion= anio_plantacion
     vinedo.save()
     #mensaje de confirmacion
-    messages.success(request,"Vinedo ACTUALIZADO exitosamente")
+    messages.success(request,"Viñedo ACTUALIZADO exitosamente")
     return redirect('iniciovi')

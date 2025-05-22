@@ -9,16 +9,16 @@
             {% csrf_token %}
             <input type="hidden" name="id" value="{{vinedoEditar.id}}">
             <label for="ubicacion">Ubicacion </label><br>
-            <input class="form-control" type="text" name="ubicacion" id="ubicacion" value="{{vinedoEditar.id}}"><br>
+            <input class="form-control" type="text" name="ubicacion" id="ubicacion" value="{{vinedoEditar.ubicacion}}"><br>
 
             <label for="hectareas" >hectareas(metros)</label><br>
-            <input class="form-control " type="text" name="hectareas" id="hectareas" value="{{vinedoEditar.id}}"><br>
+            <input class="form-control " type="text" name="hectareas" id="hectareas" value="{{vinedoEditar.hectareas}}"><br>
 
             <label for="variedad_uva" >Variedad de la Uva</label><br>
-            <input class="form-control" type="text" name="variedad_uva" id="variedad_uva" value="{{vinedoEditar.id}}"><br>
+            <input class="form-control" type="text" name="variedad_uva" id="variedad_uva" value="{{vinedoEditar.variedad_uva}}"><br>
 
-            <label for=" anio_plantacion" >Año en el que plantó</label><br>
-            <input class="form-control" type="text" name=" anio_plantacion" id=" anio_plantacion" value="{{vinedoEditar.id}}"><br>
+            <label for="anio_plantacion" >Año en el que plantó</label><br>
+            <input class="form-control" type="text" name="anio_plantacion" id="anio_plantacion" value="{{vinedoEditar.anio_plantacion}}"><br>
 
             <button class="btn btn-success" type="submit">Guardar</button>
             <a class="btn btn-danger" href="{% url 'iniciovi' %}">Cancelar</a><br><br>
