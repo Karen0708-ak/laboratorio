@@ -15,20 +15,20 @@ def nuevoMuestreo(request):
 #Almacenando los datos de cargo en la Bdd
 def guardarMuestreo(request):
     fecha = request.POST["fecha"]
-    resulados = request.POST["resulados"]
+    resultados = request.POST["resultados"]
     analistaid = request.POST["analista"]
     analista=Empleado.objects.get(id=analistaid)
     vinedoid = request.POST["vinedo"]
     vinedo=Vinedo.objects.get(id=vinedoid)
     nuevoMuestreo=Muestreo.objects.create(
             fecha=fecha,
-            resulados=resulados,
+            resultados=resultados,
             analista=analista,
             vinedo=vinedo,
         )
     #mensaje de confirmacion
     messages.success(request,"Muestreo guardado exitosamente")
-    return redirect('iniciovi')
+    return redirect('iniciomu')
 def eliminarVinedo(request,id):
     vinedoEliminar = Vinedo.objects.get(id=id)
     vinedoEliminar.delete()

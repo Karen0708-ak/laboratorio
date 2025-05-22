@@ -22,8 +22,8 @@
                 <td>{{muestreoTemporal.id}}</td>
                 <td>{{muestreoTemporal.fecha}}</td>
                 <td>{{muestreoTemporal.resultados}}</td>
-                <td>{{muestreoTemporal.analista}}</td>
-                <td>{{muestreoTemporal.vinedo}}</td>
+                <td>{{muestreoTemporal.analista.nombre}}</td>
+                <td>{{muestreoTemporal.vinedo.variedad_uva}}</td>
                 <td>
                     <a href="editarMUestreo/{{muestreoTemporal.id}}" class="btn btn-outline-warning">
                         <i class="fa fa-pen"></i>
@@ -55,8 +55,8 @@
     </tbody>
 </table>
 <div class="text-center ">
-    <a href="nuevoVinedo" class="btn btn-primary " >
-        Agregar Viñedo
+    <a href="nuevoMuestreo" class="btn btn-primary " >
+        Agregar Muestreo
     </a>
 </div>
 <br>
