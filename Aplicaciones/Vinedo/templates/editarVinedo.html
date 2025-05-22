@@ -1,0 +1,29 @@
+{% extends 'plantilla.html' %}
+{% load static %}
+{% block body %}
+<div class="row" >
+    <div class="col-md-3" ></div>
+    <div class="col-md-6 bg-black" >
+        <h1 >Nuevo Viñedo</h1>
+        <form action="/procesarEdicionVinedo" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{vinedoEditar.id}}">
+            <label for="ubicacion">Ubicacion </label><br>
+            <input class="form-control" type="text" name="ubicacion" id="ubicacion" value="{{vinedoEditar.id}}"><br>
+
+            <label for="hectareas" >hectareas(metros)</label><br>
+            <input class="form-control " type="text" name="hectareas" id="hectareas" value="{{vinedoEditar.id}}"><br>
+
+            <label for="variedad_uva" >Variedad de la Uva</label><br>
+            <input class="form-control" type="text" name="variedad_uva" id="variedad_uva" value="{{vinedoEditar.id}}"><br>
+
+            <label for=" anio_plantacion" >Año en el que plantó</label><br>
+            <input class="form-control" type="text" name=" anio_plantacion" id=" anio_plantacion" value="{{vinedoEditar.id}}"><br>
+
+            <button class="btn btn-success" type="submit">Guardar</button>
+            <a class="btn btn-danger" href="{% url 'iniciovi' %}">Cancelar</a><br><br>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+{% endblock %}
