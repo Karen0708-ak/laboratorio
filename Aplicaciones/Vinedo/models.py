@@ -7,6 +7,3 @@ class Vinedo(models.Model):
     hectareas = models.DecimalField(max_digits=5, decimal_places=2)
     variedad_uva = models.CharField(max_length=100) 
     anio_plantacion = models.IntegerField() 
-
-    def __str__(self):
-        return self.id
