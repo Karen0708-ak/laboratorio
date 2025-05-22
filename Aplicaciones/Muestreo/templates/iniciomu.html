@@ -2,7 +2,7 @@
 {% load static %}
 {% block body %}
 <br>
-<h1 class="text-center">Listado de Viñedos</h1>
+<h1 class="text-center">Listado de Muestreos</h1>
 
 <hr>
 <table class="table table-bordered table-striped table-hover ">
@@ -25,10 +25,10 @@
                 <td>{{muestreoTemporal.analista.nombre}}</td>
                 <td>{{muestreoTemporal.vinedo.variedad_uva}}</td>
                 <td>
-                    <a href="editarMUestreo/{{muestreoTemporal.id}}" class="btn btn-outline-warning">
+                    <a href="editarMuestreo/{{muestreoTemporal.id}}" class="btn btn-outline-warning">
                         <i class="fa fa-pen"></i>
                     </a>
-                    <a href="#" class="btn btn-outline-danger" onclick="confirmarEliminacion('{{vinedoTemporal.id}}')">
+                    <a href="#" class="btn btn-outline-danger" onclick="confirmarEliminacion('{{muestreoTemporal.id}}')">
                         <i class="fa fa-trash"></i>
                     </a>
                     <script>
@@ -44,7 +44,7 @@
                             cancelButtonText: 'Cancelar'
                             }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location.href = `eliminarVinedo/${id}`;
+                                window.location.href = `eliminarMuestreo/${id}`;
                             }
                             });
                         }

@@ -29,29 +29,34 @@ def guardarMuestreo(request):
     #mensaje de confirmacion
     messages.success(request,"Muestreo guardado exitosamente")
     return redirect('iniciomu')
-def eliminarVinedo(request,id):
-    vinedoEliminar = Vinedo.objects.get(id=id)
-    vinedoEliminar.delete()
-    messages.success(request,"Viñedo ELIMINADO exitosamente")
-    return redirect('iniciovi')
+
+def eliminarMuestreo(request,id):
+    muestreoEliminar = Muestreo.objects.get(id=id)
+    muestreoEliminar.delete()
+    messages.success(request,"Muestreo ELIMINADO exitosamente")
+    return redirect('iniciomu')
 
 #editar
-def editarVinedo(request,id):
-    vinedoEditar=Vinedo.objects.get(id=id)
-    return render(request,"editarVinedo.html",{'vinedoEditar':vinedoEditar})
+def editarMuestreo(request,id):
+    muestreoEditar=Muestreo.objects.get(id=id)
+    rempleados=Empleado.objects.all()
+    lvinedos=Vinedo.objects.all()
+    return render(request,"editarMuestreo.html",{'muestreoEditar':muestreoEditar, 'empleados':rempleados,'vinedos':lvinedos})
 
-def procesarEdicionVinedo(request):
+def procesarEdicionMuestreo(request):
     id=request.POST["id"]
-    ubicacion = request.POST["ubicacion"]
-    hectareas = request.POST["hectareas"].replace(',','.')
-    variedad_uva = request.POST["variedad_uva"]
-    anio_plantacion = request.POST["anio_plantacion"]
-    vinedo=Vinedo.objects.get(id=id)
-    vinedo.ubicacion=ubicacion
-    vinedo.hectareas=hectareas
-    vinedo.variedad_uva= variedad_uva
-    vinedo.anio_plantacion= anio_plantacion
-    vinedo.save()
+    fecha = request.POST["fecha"]
+    resultados = request.POST["resultados"]
+    analistaid = request.POST["analista"]
+    analista=Empleado.objects.get(id=analistaid)
+    vinedoid = request.POST["vinedo"]
+    vinedo=Vinedo.objects.get(id=vinedoid)
+    muestreo=Muestreo.objects.get(id=id)
+    muestreo.fecha=fecha
+    muestreo.resultados=resultados
+    muestreo.analista= analista
+    muestreo.vinedo= vinedo
+    muestreo.save()
     #mensaje de confirmacion
-    messages.success(request,"Viñedo ACTUALIZADO exitosamente")
-    return redirect('iniciovi')
+    messages.success(request,"Muestreo ACTUALIZADO exitosamente")
+    return redirect('iniciomu')
